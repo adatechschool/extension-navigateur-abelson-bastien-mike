@@ -1,10 +1,9 @@
 {
 
-  "description": "",
+  "description": "change la couleur des titres en vert",
   "manifest_version": 2,
-  "name": "",
+  "name": "Greenify",
   "version": "0.0.0.1",
-  "homepage_url": "",
   "icons": {
     "48": "icons/icon48.png"
   },
