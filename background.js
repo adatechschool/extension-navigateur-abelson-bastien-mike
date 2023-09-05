@@ -5,4 +5,3 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 	  code: 'document.querySelectorAll("h1").forEach(function(el) { el.style.color = "green"; });'
 	});
   });
-  

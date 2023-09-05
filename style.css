@@ -1,0 +1,26 @@
+.site {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: aquamarine;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+}
+
+#productImage {
+  height: 100px;
+  width: 100px;
+}
+
+.product {
+  margin-left: 20px;
+}
+
+#item1 {
+  margin-right: 10px;
+}
