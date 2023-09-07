@@ -1,10 +1,17 @@
+body {
+  background-color: aquamarine;
+}
+
 .site {
   display: flex;
   flex-direction: column;
+  width: 300px;
+  height: 400px;
 }
 
-body {
-  background-color: aquamarine;
+.siteName {
+  font-size: x-large;
+  font-weight: bold;
 }
 
 .item {
@@ -18,7 +25,8 @@ body {
 }
 
 .product {
-  margin-left: 20px;
+  margin-left: 15px;
+  margin-top: 15px;
 }
 
 #item1 {
