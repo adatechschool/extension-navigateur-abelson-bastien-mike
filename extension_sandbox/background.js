@@ -31,11 +31,12 @@ chrome.action.onClicked.addListener((tab) => {
       console.log(title,'titlebg')
   
       // Envoie les données récupérées au script de fond
-      chrome.runtime.sendMessage({ price, title });
+      //chrome.runtime.sendMessage({ price, title });
     }
   }
 
-  // Écouter les messages provenant des scripts de contenu
+ 
+// Écouter les messages provenant des scripts de contenu (content.js)
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.price && message.title) {
         // Accéder aux données du message
@@ -45,7 +46,9 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         // Faire quelque chose avec les données, par exemple, les afficher dans la console
         console.log(price, title,'pricetitlebg');
 
-        // Vous pouvez également envoyer ces données à d'autres parties de votre extension ici
-        chrome.runtime.sendMessage({ price, title });
-    }
-});
+        //Stocker les données dans localStorage
+        chrome.storage.local.set({"title" : title});
+        chrome.storage.local.set({"price" : price});
+      }
+    });
+    

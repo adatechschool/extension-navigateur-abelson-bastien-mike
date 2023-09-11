@@ -3,7 +3,7 @@
   "name": "Mon extension Fnac - Sandbox",
   "version": "1.0",
   "description": "Description de votre extension",
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab","storage"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
