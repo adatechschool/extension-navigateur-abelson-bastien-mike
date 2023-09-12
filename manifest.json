@@ -1,27 +1,25 @@
 {
-
-  "description": "change la couleur des titres en vert",
-  "manifest_version": 2,
-  "name": "Greenify",
-  "version": "0.0.0.1",
-  "icons": {
-    "48": "icons/icon48.png"
-  },
-  
-    "background": {
-    "scripts": ["background.js"]
-  },
-
-  "permissions": [
-    "activeTab"
-  ],
-
-"browser_action": {
+  "manifest_version": 3,
+  "name": "Mon extension Fnac - Sandbox",
+  "version": "1.0",
+  "description": "Description de votre extension",
+  "permissions": ["activeTab","storage"],
+  "action": {
+    "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/icon16.png",
-      "32": "icons/icon32.png"
-    },
-    "default_popup": "popup/popup.html"
-  }
-
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.fnac.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+  
 }
