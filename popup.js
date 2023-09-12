@@ -1,6 +1,6 @@
 
 // Accéder à chrome.storage.local après avoir reçu le message
-chrome.storage.local.get(["price", "title"], (data) => {
+chrome.storage.local.get(["price", "title", "img"], (data) => {
   const finalPrice = data.price;
   const finalTitle = data.title;
   const finalImg = data.img; 
@@ -12,7 +12,7 @@ chrome.storage.local.get(["price", "title"], (data) => {
   const productPrice = document.getElementById("productPrice");
   const productImg = document.getElementById("productImage");
 
-  productImg.src = data.img;
+  productImg.src = finalImg;
   productTitle.textContent = `Nom du produit : ${finalTitle}`;
   productPrice.textContent = `Prix : ${finalPrice}`;
 });
