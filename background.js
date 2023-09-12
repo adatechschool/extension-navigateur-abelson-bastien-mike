@@ -9,7 +9,7 @@ function keepServiceWorkerActive() {
 
 
 
-
+const products = [];
 
 // Écoute l'événement de clic sur l'icône de l'extension
 chrome.action.onClicked.addListener((tab) => {
@@ -47,13 +47,21 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         const title = message.title;
         const img = message.img;
 
+        const item = { title : title, price : price, img : img}
+        console.log(item)
+        products.push(item)
+        console.log(products)
+
         // Faire quelque chose avec les données, par exemple, les afficher dans la console
         console.log(price, title, img,'pricetitlebg');
 
         //Stocker les données dans localStorage
-        chrome.storage.local.set({"title" : title});
+        /* chrome.storage.local.set({"title" : title});
         chrome.storage.local.set({"price" : price});
-        chrome.storage.local.set({"img" : img});
+        chrome.storage.local.set({"img" : img}); */
+
+        chrome.storage.local.set({"products" : products});
+
       }
     });
     
