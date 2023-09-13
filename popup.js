@@ -1,3 +1,10 @@
+/* chrome.scripting.executeScript({
+  target: { tabId: id, allFrames : true },
+  files : ["content.js"]
+}).then(() => console.log("script injected"));
+ */
+
+
 // Accéder à chrome.storage.local après avoir reçu le message
 chrome.storage.local.get(["products"], (data) => {
   
@@ -12,9 +19,10 @@ chrome.storage.local.get(["products"], (data) => {
     listItem.classList.add("product");
 
     listItem.innerHTML = `
-      <h3>${data.products[i].title}</h3>
+      <img src="${data.products[i].img}" alt="${data.products[i].title}" id="productImage">
+      <h4>${data.products[i].title}</h4>
       <p>Prix : ${data.products[i].price}</p>
-      <img src="${data.products[i].img}" alt="${data.products[i].title}">
+      <button id="del">Supprimer</button>
     `;
 
     productList.appendChild(listItem);
